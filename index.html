@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Peek AI - Academic AI Portfolio Project</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+
+  <main class="app-container">
+    
+    
+    <header class="logo-container">
+      <img src="assets/logo.png" alt="Peek AI Logo" class="logo">
+    </header>
+
+    
+    <section class="header-section">
+      <h1 class="main-title">Upload a screenshot and understand what's inside.</h1>
+      <p class="sub-title">Supports Instagram, Pinterest, YouTube, TikTok and screenshots from anywhere.</p>
+    </section>
+
+    
+    <section class="analyzer-form">
+      
+      
+      <div class="upload-card" id="drop-zone">
+        <input type="file" id="file-input" accept="image/png, image/jpeg, image/jpg">
+        
+        
+        <div class="upload-state-default" id="upload-state-default">
+          <div class="upload-icon-wrapper">
+            <svg class="upload-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 16.5V9.75m0 0l3 3m-3-3l-3 3M6.75 19.5a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.233-2.33 3 3 0 013.758 3.848A3.752 3.752 0 0118 19.5H6.75z"></path>
+            </svg>
+          </div>
+          <p class="upload-text">Drag & Drop Screenshot or <span>Click to Upload</span></p>
+          <p class="upload-hint">PNG, JPG, JPEG (Max 10MB)</p>
+        </div>
+
+        
+        <div class="preview-container" id="preview-container">
+          <img src="" alt="Screenshot preview" class="preview-image" id="img-preview">
+          <button type="button" class="remove-btn" id="btn-remove-file" title="Remove image">×</button>
+        </div>
+      </div>
+
+      
+      <div class="caption-group">
+        <label for="caption-input" class="caption-label">Optional Caption</label>
+        <input type="text" id="caption-input" class="caption-input" placeholder="Paste caption here... (optional)">
+      </div>
+
+      
+      <button type="button" class="analyze-btn" id="btn-analyze" disabled>
+        <span class="btn-text">Analyze Screenshot</span>
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 21.5L9.62 17.62L13.5 17L9.62 16.38L9 12.5L8.38 16.38L4.5 17L8.38 17.62L9 21.5ZM19 12.5L19.41 9.91L22 9.5L19.41 9.09L19 6.5L18.59 9.09L16 9.5L18.59 9.91L19 12.5ZM15 6.5L15.31 4.56L17.25 4.25L15.31 3.94L15 2L14.69 3.94L12.75 4.25L14.69 4.56L15 6.5Z"/>
+        </svg>
+        <span class="spinner" id="btn-spinner"></span>
+      </button>
+
+      
+      <div class="results-container" id="results-box">
+        <div class="results-header">
+          <div class="results-title">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="width: 16px; height: 16px;">
+              <path d="M9 21.5L9.62 17.62L13.5 17L9.62 16.38L9 12.5L8.38 16.38L4.5 17L8.38 17.62L9 21.5ZM19 12.5L19.41 9.91L22 9.5L19.41 9.09L19 6.5L18.59 9.09L16 9.5L18.59 9.91L19 12.5ZM15 6.5L15.31 4.56L17.25 4.25L15.31 3.94L15 2L14.69 3.94L12.75 4.25L14.69 4.56L15 6.5Z"/>
+            </svg>
+            Peek Analysis Complete
+          </div>
+          <span class="platform-badge" id="res-platform">Pinterest</span>
+        </div>
+        <div class="result-card-grid">
+          <div class="result-block">
+            <h4 class="result-section-title">Context & Objects</h4>
+            <p class="result-text" id="res-context">Aesthetic bookshelf with neat color-coordinated books and minimal decor.</p>
+          </div>
+          <div class="result-block">
+            <h4 class="result-section-title">Tags & Keywords</h4>
+            <div class="tags-list" id="res-tags">
+              <span class="tag-badge">booktok</span>
+              <span class="tag-badge">minimalist</span>
+              <span class="tag-badge">reading</span>
+              <span class="tag-badge">home decor</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+
+    
+    <footer class="small-footer">
+      <span>&copy; 2025 Peek AI</span>
+      <span>Built as an AI portfolio project.</span>
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
